@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?><DEFECTS><DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\18251\desktop\mega final extrem\sdlexamplesvcws\simplesdlwrapper\</FILEPATH>
+      <FILENAME>graphics.c</FILENAME>
+      <LINE>76</LINE>
+      <COLUMN>39</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>zirkuluaMarraztu</FUNCTION>
+    <DECORATED>zirkuluaMarraztu</DECORATED>
+    <FUNCLINE>68</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\18251\desktop\mega final extrem\sdlexamplesvcws\simplesdlwrapper\</FILEPATH>
+      <FILENAME>graphics.c</FILENAME>
+      <LINE>76</LINE>
+      <COLUMN>36</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>zirkuluaMarraztu</FUNCTION>
+    <DECORATED>zirkuluaMarraztu</DECORATED>
+    <FUNCLINE>68</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT></DEFECTS>

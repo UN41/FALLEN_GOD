@@ -1,0 +1,32 @@
+﻿  boss4.c
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4.c(47): warning C4244: 'función': conversión de 'float' a 'int'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4.c(67): warning C4244: 'función': conversión de 'float' a 'int'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4.c(86): warning C4020: 'ZIRKULUA_JOKALARIARA_MUGITU_BOSS4': hay demasiados parámetros reales
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4.c(112): warning C4244: 'función': conversión de 'float' a 'int'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4.c(113): warning C4244: 'función': conversión de 'float' a 'int'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4.c(114): warning C4244: 'función': conversión de 'float' a 'int'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4.c(115): warning C4244: 'función': conversión de 'float' a 'int'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4.c(116): warning C4244: 'función': conversión de 'float' a 'int'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4.c(147): warning C4244: 'función': conversión de 'float' a 'int'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4.c(153): warning C4244: 'función': conversión de 'float' a 'int'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4.c(184): warning C4029: la lista de parámetros formales declarada es distinta de la definición
+  boss4b.c
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4b.c(39): warning C4244: 'función': conversión de 'float' a 'int'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4b.c(63): warning C4244: 'función': conversión de 'float' a 'int'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4b.c(70): warning C4244: 'función': conversión de 'float' a 'int'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4b.c(82): warning C4013: 'JOKALARIAREN_BIZITZA_KENTZEA_BOSS4MINA' sin definir; se supone que extern devuelve como resultado int
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4b.c(108): warning C4020: 'ZIRKULUA_JOKALARIARA_MUGITU_BOSS4B': hay demasiados parámetros reales
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4b.c(114): warning C4244: 'función': conversión de 'float' a 'int'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4b.c(115): warning C4244: 'función': conversión de 'float' a 'int'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4b.c(116): warning C4244: 'función': conversión de 'float' a 'int'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4b.c(117): warning C4244: 'función': conversión de 'float' a 'int'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4b.c(118): warning C4244: 'función': conversión de 'float' a 'int'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4b.c(147): warning C4244: 'función': conversión de 'float' a 'int'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4b.c(152): warning C4244: 'función': conversión de 'float' a 'int'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4b.c(189): warning C4029: la lista de parámetros formales declarada es distinta de la definición
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4b.c(201): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4b.c(202): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4b.c(205): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\mondragon\programazioa\pbl\mega final extrem\sdlexamplesvcws\02simplegame\boss4b.c(206): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+  Generando código...
+  02simpleGame.vcxproj -> C:\MONDRAGON\Programazioa\PBL\MEGA FINAL EXTREM\sdlExamplesVcWS\Debug\02simpleGame.exe

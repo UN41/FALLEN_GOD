@@ -1,22 +1,18 @@
-/*#include "orokorrak.h"
-#include "sarrera.h"
-#include "errealitateFisikoa.h"
-#include "jokoa.h"
-#include "bukaera.h"*/
-
-//---------------------------------------------------------------------------------
-#include "imagen.h"
 #include "graphics.h"
-#include "ebentoak.h"
 #include "text.h"
-#include "soinua.h"
-//---------------------------------------------------------------------------------
-
 #include <stdio.h>
-
 #include "ourTypes.h"
 #include "game02.h"
+#include "dialogo.h"
 
+EGOERA boss1(void);
+EGOERA boss2(void);
+EGOERA boss3(void);
+EGOERA boss4(void);
+EGOERA boss1b(void);
+EGOERA boss2b(void);
+EGOERA boss3b(void);
+EGOERA boss4b(void);
 
 int main(int argc, char * str[]) {
   int jarraitu = 0;
@@ -70,6 +66,9 @@ int main(int argc, char * str[]) {
 	do {
 		dialogoSugea2();
 		egoera = boss2b();
+		if (egoera == GALDU) {
+			gameOver();
+		}
 	} while (egoera == GALDU);
 	do {
 		dialogoPulpo2A();
@@ -87,9 +86,7 @@ int main(int argc, char * str[]) {
 		}
 	} while (egoera == GALDU);
 	dialogoTitan2B();
-  //  jarraitu = jokoAmaierakoa(egoera);
   } while (jarraitu);
   sgItxi();
   return 0;
 }
-

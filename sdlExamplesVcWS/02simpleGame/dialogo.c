@@ -1,8 +1,8 @@
 #include "imagen.h"
 #include "graphics.h"
 #include "ebentoak.h"
-#include "text.h"
 #include "soinua.h"
+#include "text.h"
 #include "ourTypes.h"
 #include <stdio.h>
 #include <windows.h>
@@ -805,16 +805,6 @@ void dialogoPulpo2B(void)
 		ebentuDialogo = ebentuaJasoGertatuBada();
 	} while (ebentuDialogo != TECLA_RETURN);
 	irudiaKendu(imageIdDialogo);
-	imageIdDialogo = irudiaKargatu(IMAGE_PRESSW);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
-	do
-	{
-		ebentuDialogo = ebentuaJasoGertatuBada();
-	} while (ebentuDialogo != TECLA_w);
-	irudiaKendu(imageIdDialogo);
-
 	audioTerminate();
 
 	pantailaGarbitu();

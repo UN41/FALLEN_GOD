@@ -11,4 +11,5 @@ int JOKALARIAREN_BIZITZA_KENTZEA(int bizitzKopurua, POSIZIOA jokalaria, POSIZIOA
 int BOSSAREN_BIZITZA(POSIZIOA posizioaTiroa, POSIZIOA posizioaBoss, int bossarenBizitzak);
 int JOKALARIAREN_BIZITZA_KENTZEA_SUGEA(int bizitzKopurua, POSIZIOA jokalaria, POSIZIOA oztopoa);
 int JOKALARIAREN_BIZITZA_KENTZEA_BOSS4(int bizitzKopurua, POSIZIOA posizioaJokalaria, POSIZIOA posizioaPilota);
+int JOKALARIAREN_BIZITZA_KENTZEA_BOSS4MINA(POSIZIOA posizioaJokalaria, POSIZIOA posizioaPilota);
 #endif

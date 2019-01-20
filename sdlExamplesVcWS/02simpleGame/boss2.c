@@ -1,5 +1,5 @@
 #include "jokalaria.h"
-//#include "globals.h"
+#include "globals.h"
 #include "boss2.h"
 #include "imagen.h"
 #include "graphics.h"
@@ -9,7 +9,7 @@
 #include <windows.h>
 #include "irudiakEtaSoinuak.h"
 
-int hasierakoPosizioaSugea = 0, ebentu;
+int hasierakoPosizioaSugea = 0;
 float posizioaSugeaX = 0, posizioaSugeaY = 0;
 int paretenKontraKont = 0;
 
@@ -27,12 +27,12 @@ POSIZIOA BOSS_JOKALARIARA_JARRAITU(POSIZIOA posizioaBoss, POSIZIOA posizioaJokal
 			angelua = (float)atan(posizioaSugeaX / posizioaSugeaY);
 		}
 		if ((posizioaSugeaX < 0 && posizioaSugeaY < 0) || (posizioaSugeaX > 0 && posizioaSugeaY < 0)) {
-			posizioaBoss.x = posizioaBoss.x - (float)4 * sin(angelua);
-			posizioaBoss.y = posizioaBoss.y - (float)4 * cos(angelua);
+			posizioaBoss.x = posizioaBoss.x - (float)4 * (float)sin(angelua);
+			posizioaBoss.y = posizioaBoss.y - (float)4 * (float)cos(angelua);
 		}
 		else if ((posizioaSugeaX > 0 && posizioaSugeaY > 0) || (posizioaSugeaX < 0 && posizioaSugeaY > 0)) {
-			posizioaBoss.x = posizioaBoss.x + (float)4 * sin(angelua);
-			posizioaBoss.y = posizioaBoss.y + (float)4 * cos(angelua);
+			posizioaBoss.x = posizioaBoss.x + (float)4 * (float)sin(angelua);
+			posizioaBoss.y = posizioaBoss.y + (float)4 * (float)cos(angelua);
 		}
 		if (posizioaBoss.x < -15 || posizioaBoss.x > 560 || posizioaBoss.y < -12 || posizioaBoss.y > 390) {
 			hasierakoPosizioaSugea = 0;
@@ -78,7 +78,7 @@ EGOERA boss2(void)
 	loadTheMusic(JOKOA_SOUND_BOSS2);
 	playMusic();
 	jokalaria.id = irudiaKargatu(JOKOA_PLAYER_IMAGE_DELANTE1);
-	irudiaMugitu(jokalaria.id, jokalaria.pos.x, jokalaria.pos.y - 20);
+	irudiaMugitu(jokalaria.id, (int)jokalaria.pos.x, (int)jokalaria.pos.y - 20);
 
 	do {
 		Sleep(10);
@@ -92,7 +92,6 @@ EGOERA boss2(void)
 		jokalaria.pos = JOKALARIAREN_MUGIMENDUA(jokalaria.pos);
 		jokalaria.id = JOKALARIAREN_IRUDIA(jokalaria.id, spriteAukeratu);
 		imageIdSerpiente1 = SUGEAREN_IRUDIA(imageIdSerpiente1);
-		//pantailaGarbitu();
 
 		if (inmortala >= 10 && bizitzKopurua > 0) {
 			bizitzKopurua = JOKALARIAREN_BIZITZA_KENTZEA_SUGEA(bizitzKopurua, jokalaria.pos, boss.pos);
@@ -107,9 +106,9 @@ EGOERA boss2(void)
 		}
 		pantailaGarbitu();
 
-		irudiaMugitu(jokalaria.id, jokalaria.pos.x, jokalaria.pos.y - 20);
-		irudiaMugitu(imageIdBala, tiroa.pos.x, tiroa.pos.y);
-		irudiaMugitu(imageIdSerpiente1, boss.pos.x, boss.pos.y);
+		irudiaMugitu(jokalaria.id, (int)jokalaria.pos.x, (int)jokalaria.pos.y - 20);
+		irudiaMugitu(imageIdBala, (int)tiroa.pos.x, (int)tiroa.pos.y);
+		irudiaMugitu(imageIdSerpiente1, (int)boss.pos.x, (int)boss.pos.y);
 
 		irudiakMarraztu();
 		pantailaBerriztu();
@@ -135,7 +134,6 @@ int SUGEAREN_IRUDIA(int irudia) {
 }
 
 int SUGEA_GELDIRIK(int irudia) {
-	int denboraGeldirik;
 
 	if (paretenKontraKont == 6) {
 		irudiaKendu(irudia);

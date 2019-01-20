@@ -3,7 +3,9 @@
 
 #include "ourTypes.h"
 
+void gameOver(void);
 void menu(void);
+void dialogoIntro(void);
 void dialogoArbol1(void);
 void dialogoSugea1(void);
 void dialogoPulpo1(void);
@@ -16,4 +18,3 @@ void dialogoTitan2A(void);
 void dialogoTitan2B(void);
 
 #endif
-

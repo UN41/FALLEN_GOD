@@ -16,7 +16,7 @@
 /*int hasierakoPosizioaZirkulua = 0;
 float posizioaZirkuluaX = 0, posizioaZirkuluaY = 0;
 int hasierakoPosizioaTiroa = 0;
-float posizioaTiroaX = 0, posizioaTiroaY = 0;
-int ebentu;*/
+float posizioaTiroaX = 0, posizioaTiroaY = 0;*/
+int ebentu;
 
 #endif

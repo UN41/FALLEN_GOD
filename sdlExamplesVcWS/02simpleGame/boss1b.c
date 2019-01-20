@@ -1,5 +1,5 @@
 #include "jokalaria.h"
-//#include "globals.h"
+#include "globals.h"
 #include "boss1.h"
 #include "boss1b.h"
 #include "imagen.h"
@@ -10,7 +10,7 @@
 #include <windows.h>
 #include "irudiakEtaSoinuak.h"
 
-int hasierakoPosizioaZirkuluaB1 = 0, hasierakoPosizioaZirkuluaB2 = 0, ebentu;
+int hasierakoPosizioaZirkuluaB1 = 0, hasierakoPosizioaZirkuluaB2 = 0;
 float posizioaZirkuluaXBoss1b1 = 0, posizioaZirkuluaYBoss1b1 = 0, posizioaZirkuluaXBoss1b2 = 0, posizioaZirkuluaYBoss1b2 = 0;
 
 EGOERA boss1b(void)
@@ -21,7 +21,6 @@ EGOERA boss1b(void)
 	int bizitz1, bizitz2, bizitz3, bizitz4, bizitz5, inmortala = 0;
 	int bizitzaKendu[5] = { 1,1,1,1,1 };
 	JOKO_ELEMENTUA bolaArbola1, bolaArbola2, jokalaria, tiroa, boss1;
-	POSIZIOA zirkulua1Aux, zirkulua2Aux, tiroaAux, jokalariaAux;
 	POSIZIOA saguPos;
 
 	imageIdMapa = irudiaKargatu(MAPA_BOSS1);
@@ -52,7 +51,7 @@ EGOERA boss1b(void)
 	loadTheMusic(JOKOA_SOUND_BOSS1);
 	playMusic();
 	jokalaria.id = irudiaKargatu(JOKOA_PLAYER_IMAGE_DELANTE1);
-	irudiaMugitu(jokalaria.id, jokalaria.pos.x, jokalaria.pos.y - 20);
+	irudiaMugitu(jokalaria.id, (int)jokalaria.pos.x, (int)jokalaria.pos.y - 20);
 
 	do {
 		Sleep(10);
@@ -73,11 +72,11 @@ EGOERA boss1b(void)
 			bizitzKopurua = JOKALARIAREN_BIZITZA(bizitzKopurua, bizitz1, bizitz2, bizitz3, bizitz4, bizitz5, bizitzaKendu);
 			inmortala = 0;
 		}
-		irudiaMugitu(imageIdBolaArbola1, bolaArbola1.pos.x, bolaArbola1.pos.y);
-		irudiaMugitu(imageIdBolaArbola2, bolaArbola2.pos.x, bolaArbola2.pos.y);
-		irudiaMugitu(jokalaria.id, jokalaria.pos.x, jokalaria.pos.y - 20);
-		irudiaMugitu(imageIdBala, tiroa.pos.x, tiroa.pos.y);
-		irudiaMugitu(imageIdArbol, boss1.pos.x, boss1.pos.y);
+		irudiaMugitu(imageIdBolaArbola1, (int)bolaArbola1.pos.x, (int)bolaArbola1.pos.y);
+		irudiaMugitu(imageIdBolaArbola2, (int)bolaArbola2.pos.x, (int)bolaArbola2.pos.y);
+		irudiaMugitu(jokalaria.id, (int)jokalaria.pos.x, (int)jokalaria.pos.y - 20);
+		irudiaMugitu(imageIdBala, (int)tiroa.pos.x, (int)tiroa.pos.y);
+		irudiaMugitu(imageIdArbol, (int)boss1.pos.x, (int)boss1.pos.y);
 
 		irudiakMarraztu();
 		pantailaBerriztu();
@@ -150,12 +149,12 @@ POSIZIOA ZIRKULUA_JOKALARIARA_MUGITU1(POSIZIOA posizioaPilota, POSIZIOA posizioa
 	}
 
 	if ((posizioaZirkuluaXBoss1b1 < 0 && posizioaZirkuluaYBoss1b1 < 0) || (posizioaZirkuluaXBoss1b1 > 0 && posizioaZirkuluaYBoss1b1 < 0)) {
-		posizioaPilota.x = posizioaPilota.x - (float)4 * sin(angelua);
-		posizioaPilota.y = posizioaPilota.y - (float)4 * cos(angelua);
+		posizioaPilota.x = posizioaPilota.x - (float)4 * (float)sin(angelua);
+		posizioaPilota.y = posizioaPilota.y - (float)4 * (float)cos(angelua);
 	}
 	else if ((posizioaZirkuluaXBoss1b1 > 0 && posizioaZirkuluaYBoss1b1 > 0) || (posizioaZirkuluaXBoss1b1 < 0 && posizioaZirkuluaYBoss1b1 > 0)) {
-		posizioaPilota.x = posizioaPilota.x + (float)4 * sin(angelua);
-		posizioaPilota.y = posizioaPilota.y + (float)4 * cos(angelua);
+		posizioaPilota.x = posizioaPilota.x + (float)4 * (float)sin(angelua);
+		posizioaPilota.y = posizioaPilota.y + (float)4 * (float)cos(angelua);
 	}
 
 	if (posizioaPilota.x < 10 || posizioaPilota.x > 630 || posizioaPilota.y < 10 || posizioaPilota.y > 470) {

@@ -1,16 +1,15 @@
+#include "jokalaria.h"
+#include "globals.h"
+#include "boss3.h"
 #include "imagen.h"
 #include "graphics.h"
 #include "ebentoak.h"
 #include "soinua.h"
 #include <stdio.h>
 #include <windows.h>
+#include "irudiakEtaSoinuak.h"
 #include <time.h>
 #include <stdlib.h>
-#include "boss3.h"
-#include "irudiakEtaSoinuak.h"
-#include "jokalaria.h"
-#include "globals.h"//ebentu
-int ebentu;
 
 EGOERA boss3b(void) {
 	EGOERA  egoera = BOSS3;
@@ -19,7 +18,7 @@ EGOERA boss3b(void) {
 	int bizitzaKendu[5] = { 1,1,1,1,1 };
 	JOKO_ELEMENTUA jokalaria, boss3, tiroa;//koord: ARMA_BIRAKARIA_MUGITU bueltatzen duen balioa.
 	POSIZIOA koord, saguPos, armarenKokapena = { SCREEN_WIDTH / 2 - 17, SCREEN_HEIGHT / 2 - 18 };
-	float rad = 400, anguloa = 0, abiaduraBoss = 0.01;//armaBirakaria-ren erradioa eta biraketaren hasierako anguloa
+	float rad = 400, anguloa = 0, abiaduraBoss = (float)0.01;//armaBirakaria-ren erradioa eta biraketaren hasierako anguloa
 	int imageIdMapa, imageIdBala;
 	int kont = 0, norabidea = 1;
 	int hit1 = 0, inmuneKont = 0, inmune = 80;
@@ -53,12 +52,12 @@ EGOERA boss3b(void) {
 	int minaId[8];
 	for (int i = 0; i < 8; i++) {
 		minaId[i] = irudiaKargatu(IMAGE_ARMA_PULPO2);
-		irudiaMugitu(minaId[i], x[i], y[i]);
+		irudiaMugitu(minaId[i], (int)x[i], (int)y[i]);
 	}
 
 	irudiaMugitu(imageIdMapa, 0, 0);
-	irudiaMugitu(boss3.id, boss3.pos.x, boss3.pos.y);
-	irudiaMugitu(jokalaria.id, jokalaria.pos.x, jokalaria.pos.y - 20);
+	irudiaMugitu(boss3.id, (int)boss3.pos.x, (int)boss3.pos.y);
+	irudiaMugitu(jokalaria.id, (int)jokalaria.pos.x, (int)jokalaria.pos.y - 20);
 
 	srand(time(NULL));
 	do {
@@ -79,7 +78,7 @@ EGOERA boss3b(void) {
 			bizitzKopurua = JOKALARIAREN_BIZITZA(bizitzKopurua, bizitz1, bizitz2, bizitz3, bizitz4, bizitz5, bizitzaKendu);
 		}
 		if (inmuneKont == 0) {
-			hit1 = kolisioaBoss3(jokalaria.pos, armarenKokapena, koord, anguloa, rad, bizitzKopurua);
+			hit1 = kolisioaBoss3(jokalaria.pos, armarenKokapena, koord, anguloa, rad);
 			if (hit1 == 1) {
 				inmuneKont += inmune;//Jokalariak kolpe bat jasotzen duenean denbora tarte batean inmunea izango da.
 				bizitzKopurua--;
@@ -92,8 +91,8 @@ EGOERA boss3b(void) {
 			}
 		}
 		else inmuneKont--;
-		irudiaMugitu(jokalaria.id, jokalaria.pos.x, jokalaria.pos.y - 20);
-		irudiaMugitu(imageIdBala, tiroa.pos.x, tiroa.pos.y);
+		irudiaMugitu(jokalaria.id, (int)jokalaria.pos.x, (int)jokalaria.pos.y - 20);
+		irudiaMugitu(imageIdBala, (int)tiroa.pos.x, (int)tiroa.pos.y);
 		armaMarraztu(armarenKokapena, koord, anguloa, rad);
 		pantailaBerriztu();
 		egoera = JOKO_EGOERA_AZTERTU_BOSS3(bizitzKopurua, bossarenBizitzak);

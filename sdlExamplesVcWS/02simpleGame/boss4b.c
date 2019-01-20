@@ -1,5 +1,5 @@
 #include "jokalaria.h"
-//#include "globals.h"
+#include "globals.h"
 #include "boss4b.h"
 #include "imagen.h"
 #include "graphics.h"
@@ -9,7 +9,7 @@
 #include <windows.h>
 #include "irudiakEtaSoinuak.h"
 
-int hasierakoPosizioaZirkuluaBoss4 = 0, ebentu;
+int hasierakoPosizioaZirkuluaBoss4 = 0;
 float posizioaZirkuluaXBoss4 = 0, posizioaZirkuluaYBoss4 = 0;
 
 EGOERA boss4b(void) {
@@ -36,7 +36,7 @@ EGOERA boss4b(void) {
 	boss4.pos.x = 500;
 	boss4.pos.y = 180;
 	boss4.id = irudiaKargatu(JOKOA_IMG_BOSS);
-	irudiaMugitu(boss4.id, boss4.pos.x, boss4.pos.y);
+	irudiaMugitu(boss4.id, (int)boss4.pos.x, (int)boss4.pos.y);
 	imageIdBala = irudiaKargatu(TIROA_IMAGE);
 	imageIdBalaBoss41 = irudiaKargatu(TIROA_IMG_BOSS);
 	imageIdBalaBoss42 = irudiaKargatu(TIROA_IMG_BOSS);
@@ -60,14 +60,14 @@ EGOERA boss4b(void) {
 	int minaId[10];
 	for (int i = 0; i < 10; i++) {
 		minaId[i] = irudiaKargatu(IMAGE_ARMA_PULPO2);
-		irudiaMugitu(minaId[i], x[i], y[i]);
+		irudiaMugitu(minaId[i], (int)x[i], (int)y[i]);
 	}
 
 	audioInit();
 	loadTheMusic(JOKOA_SOUND_BOSS4B);
 	playMusic();
 	jokalaria.id = irudiaKargatu(JOKOA_PLAYER_IMAGE_DELANTE1);
-	irudiaMugitu(jokalaria.id, jokalaria.pos.x, jokalaria.pos.y - 20);
+	irudiaMugitu(jokalaria.id, (int)jokalaria.pos.x, (int)jokalaria.pos.y - 20);
 
 	do {
 		Sleep(9);
@@ -111,11 +111,11 @@ EGOERA boss4b(void) {
 		bolaSua3.pos.x = bolaSua1.pos.x + 30;
 		bolaSua3.pos.y = bolaSua1.pos.y - 30;
 
-		irudiaMugitu(jokalaria.id, jokalaria.pos.x, jokalaria.pos.y);
-		irudiaMugitu(imageIdBala, tiroa.pos.x, tiroa.pos.y);
-		irudiaMugitu(imageIdBalaBoss41, bolaSua1.pos.x, bolaSua1.pos.y);
-		irudiaMugitu(imageIdBalaBoss42, bolaSua2.pos.x, bolaSua2.pos.y);
-		irudiaMugitu(imageIdBalaBoss43, bolaSua3.pos.x, bolaSua3.pos.y);
+		irudiaMugitu(jokalaria.id, (int)jokalaria.pos.x, (int)jokalaria.pos.y);
+		irudiaMugitu(imageIdBala, (int)tiroa.pos.x, (int)tiroa.pos.y);
+		irudiaMugitu(imageIdBalaBoss41, (int)bolaSua1.pos.x, (int)bolaSua1.pos.y);
+		irudiaMugitu(imageIdBalaBoss42, (int)bolaSua2.pos.x, (int)bolaSua2.pos.y);
+		irudiaMugitu(imageIdBalaBoss43, (int)bolaSua3.pos.x, (int)bolaSua3.pos.y);
 
 		tiempo++;
 
@@ -144,12 +144,12 @@ EGOERA boss4b(void) {
 		if (boss4.pos.x > jokalaria.pos.x) {
 			irudiaKendu(boss4.id);
 			boss4.id = irudiaKargatu(JOKOA_IMG_BOSS2);
-			irudiaMugitu(boss4.id, boss4.pos.x, boss4.pos.y - 20);
+			irudiaMugitu(boss4.id, (int)boss4.pos.x, (int)boss4.pos.y - 20);
 		}
 		else {
 			irudiaKendu(boss4.id);
 			boss4.id = irudiaKargatu(JOKOA_IMG_BOSSDERECHA2);
-			irudiaMugitu(boss4.id, boss4.pos.x, boss4.pos.y - 20);
+			irudiaMugitu(boss4.id, (int)boss4.pos.x, (int)boss4.pos.y - 20);
 		}
 
 		irudiakMarraztu();
@@ -198,12 +198,12 @@ POSIZIOA ZIRKULUA_JOKALARIARA_MUGITU_BOSS4B(POSIZIOA posizioaPilota, POSIZIOA po
 		angelua = (float)atan(posizioaZirkuluaXBoss4 / posizioaZirkuluaYBoss4);
 	}
 	if ((posizioaZirkuluaXBoss4 < 0 && posizioaZirkuluaYBoss4 < 0) || (posizioaZirkuluaXBoss4 > 0 && posizioaZirkuluaYBoss4 < 0)) {
-		posizioaPilota.x = posizioaPilota.x - (float)5 * sin(angelua);
-		posizioaPilota.y = posizioaPilota.y - (float)5 * cos(angelua);
+		posizioaPilota.x = posizioaPilota.x - (float)5 * (float)sin(angelua);
+		posizioaPilota.y = posizioaPilota.y - (float)5 * (float)cos(angelua);
 	}
 	else if ((posizioaZirkuluaXBoss4 > 0 && posizioaZirkuluaYBoss4 > 0) || (posizioaZirkuluaXBoss4 < 0 && posizioaZirkuluaYBoss4 > 0)) {
-		posizioaPilota.x = posizioaPilota.x + (float)5 * sin(angelua);
-		posizioaPilota.y = posizioaPilota.y + (float)5 * cos(angelua);
+		posizioaPilota.x = posizioaPilota.x + (float)5 * (float)sin(angelua);
+		posizioaPilota.y = posizioaPilota.y + (float)5 * (float)cos(angelua);
 	}
 	if (posizioaPilota.x < 0 || posizioaPilota.x > 640 || posizioaPilota.y < 0 || posizioaPilota.y > 480) {
 		posizioaPilota.x = boss4.x + 50;

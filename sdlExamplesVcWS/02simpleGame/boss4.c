@@ -1,5 +1,5 @@
 #include "jokalaria.h"
-//#include "globals.h"
+#include "globals.h"
 #include "boss4.h"
 #include "boss4b.h"
 #include "imagen.h"
@@ -11,7 +11,7 @@
 #include "irudiakEtaSoinuak.h"
 
 
-int hasierakoPosizioaZirkulua4 = 0, ebentu;
+int hasierakoPosizioaZirkulua4 = 0;
 float posizioaZirkuluaX4 = 0, posizioaZirkuluaY4 = 0;
 
 EGOERA boss4(void)
@@ -24,7 +24,6 @@ EGOERA boss4(void)
 	int hasierakoPosizioa = 0;
 	int  imageIdBala, imageIdBalaBoss41, imageIdBalaBoss42, imageIdBalaBoss43, imageIdMapa;
 	JOKO_ELEMENTUA jokalaria, bolaSua1, bolaSua2, bolaSua3, tiroa, boss4;
-	POSIZIOA aux, tiroaAux, jokalariaAux;
 	POSIZIOA saguPos;
 
 	imageIdMapa = irudiaKargatu(MAPA_BOSS4);
@@ -44,7 +43,7 @@ EGOERA boss4(void)
 	boss4.pos.x = 500;
 	boss4.pos.y = 180;
 	boss4.id = irudiaKargatu(JOKOA_IMG_BOSS);
-	irudiaMugitu(boss4.id, boss4.pos.x, boss4.pos.y);
+	irudiaMugitu(boss4.id, (int)boss4.pos.x, (int)boss4.pos.y);
 	imageIdBala = irudiaKargatu(TIROA_IMAGE);
 
 	bolaSua1.pos.x = 600;
@@ -64,28 +63,21 @@ EGOERA boss4(void)
 	loadTheMusic(JOKOA_SOUND_BOSS4A);
 	playMusic();
 	jokalaria.id = irudiaKargatu(JOKOA_PLAYER_IMAGE_DELANTE1);
-	irudiaMugitu(jokalaria.id, jokalaria.pos.x, jokalaria.pos.y - 20);
+	irudiaMugitu(jokalaria.id, (int)jokalaria.pos.x, (int)jokalaria.pos.y - 20);
 
 	do {
 		Sleep(9);
 		spriteAukeratu++;
 		inmortala++;
 
-
 		saguPos = saguarenPosizioa();
 		ebentu = ebentuaJasoGertatuBada();
-		tiroaAux = JOKALARIAREN_TIROA(jokalaria.pos, tiroa.pos, saguPos, boss4.pos);
-		tiroa.pos.x = tiroaAux.x;
-		tiroa.pos.y = tiroaAux.y;
+		tiroa.pos = JOKALARIAREN_TIROA(jokalaria.pos, tiroa.pos, saguPos, boss4.pos);
 
-		jokalariaAux = JOKALARIAREN_MUGIMENDUA(jokalaria.pos);
-		jokalaria.pos.x = jokalariaAux.x;
-		jokalaria.pos.y = jokalariaAux.y;
+		jokalaria.pos = JOKALARIAREN_MUGIMENDUA(jokalaria.pos);
 		jokalaria.id = JOKALARIAREN_IRUDIA(jokalaria.id, spriteAukeratu);
 		pantailaGarbitu();
-		aux = ZIRKULUA_JOKALARIARA_MUGITU_BOSS4(bolaSua1.pos, jokalaria.pos, boss4.pos);
-		bolaSua1.pos.x = aux.x;
-		bolaSua1.pos.y = aux.y;
+		bolaSua1.pos = ZIRKULUA_JOKALARIARA_MUGITU_BOSS4(bolaSua1.pos, jokalaria.pos, boss4.pos);
 		bolaSua2.pos.x = bolaSua1.pos.x + 30;
 		bolaSua2.pos.y = bolaSua1.pos.y + 30;
 		bolaSua3.pos.x = bolaSua1.pos.x + 30;
@@ -109,11 +101,11 @@ EGOERA boss4(void)
 		bossarenBizitzak = BOSSAREN_BIZITZA(tiroa.pos, boss4.pos, bossarenBizitzak);
 
 
-		irudiaMugitu(jokalaria.id, jokalaria.pos.x, jokalaria.pos.y);
-		irudiaMugitu(imageIdBala, tiroa.pos.x, tiroa.pos.y);
-		irudiaMugitu(imageIdBalaBoss41, bolaSua1.pos.x, bolaSua1.pos.y);
-		irudiaMugitu(imageIdBalaBoss42, bolaSua2.pos.x, bolaSua2.pos.y);
-		irudiaMugitu(imageIdBalaBoss43, bolaSua3.pos.x, bolaSua3.pos.y);
+		irudiaMugitu(jokalaria.id, (int)jokalaria.pos.x, (int)jokalaria.pos.y);
+		irudiaMugitu(imageIdBala, (int)tiroa.pos.x, (int)tiroa.pos.y);
+		irudiaMugitu(imageIdBalaBoss41, (int)bolaSua1.pos.x, (int)bolaSua1.pos.y);
+		irudiaMugitu(imageIdBalaBoss42, (int)bolaSua2.pos.x, (int)bolaSua2.pos.y);
+		irudiaMugitu(imageIdBalaBoss43, (int)bolaSua3.pos.x, (int)bolaSua3.pos.y);
 
 		tiempo++;
 
@@ -144,13 +136,13 @@ EGOERA boss4(void)
 		if (boss4.pos.x > jokalaria.pos.x) {
 			irudiaKendu(boss4.id);
 			boss4.id = irudiaKargatu(JOKOA_IMG_BOSS);
-			irudiaMugitu(boss4.id, boss4.pos.x, boss4.pos.y - 20);
+			irudiaMugitu(boss4.id, (int)boss4.pos.x, (int)boss4.pos.y - 20);
 
 		}
 		else {
 			irudiaKendu(boss4.id);
 			boss4.id = irudiaKargatu(JOKOA_IMG_BOSSDERECHA);
-			irudiaMugitu(boss4.id, boss4.pos.x, boss4.pos.y - 20);
+			irudiaMugitu(boss4.id, (int)boss4.pos.x, (int)boss4.pos.y - 20);
 		}
 
 		irudiakMarraztu();
@@ -179,7 +171,6 @@ EGOERA JOKO_EGOERA_AZTERTU_BOSS4(int bizitzKopurua, int bossarenBizitzak) {
 	}
 	return ret;
 }
-
 
 POSIZIOA ZIRKULUA_JOKALARIARA_MUGITU_BOSS4(POSIZIOA posizioaPilota, POSIZIOA posizioaJokalaria, POSIZIOA boss4) {
 	float angelua;

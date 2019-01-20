@@ -1,5 +1,5 @@
 #include "jokalaria.h"
-//#include "globals.h"
+#include "globals.h"
 #include "boss1.h"
 #include "boss1b.h"
 #include "imagen.h"
@@ -10,7 +10,7 @@
 #include <windows.h>
 #include "irudiakEtaSoinuak.h"
 
-int hasierakoPosizioaZirkulua = 0, ebentu;
+int hasierakoPosizioaZirkulua = 0;
 float posizioaZirkuluaX = 0, posizioaZirkuluaY = 0;
 
 EGOERA boss1(void) {
@@ -47,7 +47,7 @@ EGOERA boss1(void) {
 	loadTheMusic(JOKOA_SOUND_BOSS1);
 	playMusic();
 	jokalaria.id = irudiaKargatu(JOKOA_PLAYER_IMAGE_DELANTE1);
-	irudiaMugitu(jokalaria.id, jokalaria.pos.x, jokalaria.pos.y - 20);
+	irudiaMugitu(jokalaria.id, (int)jokalaria.pos.x, (int)jokalaria.pos.y - 20);
 
 	do {
 		Sleep(10);
@@ -61,20 +61,19 @@ EGOERA boss1(void) {
 		jokalaria.pos = JOKALARIAREN_MUGIMENDUA(jokalaria.pos);
 		jokalaria.id = JOKALARIAREN_IRUDIA(jokalaria.id, spriteAukeratu);
 		pantailaGarbitu();
-		if (inmortala >= 6 && bizitzKopurua >= 1) {
+		if (inmortala >= 6 && bizitzKopurua > 0) {
 			bizitzKopurua = JOKALARIAREN_BIZITZA_KENTZEA(bizitzKopurua, jokalaria.pos, bolaArbola.pos);
 			bizitzKopurua = JOKALARIAREN_BIZITZA(bizitzKopurua, bizitz1, bizitz2, bizitz3, bizitz4, bizitz5, bizitzaKendu);
 			inmortala = 0;
-		}	
-		irudiaMugitu(imageIdBolaArbola, bolaArbola.pos.x, bolaArbola.pos.y);
-		irudiaMugitu(jokalaria.id, jokalaria.pos.x, jokalaria.pos.y - 20);
-		irudiaMugitu(imageIdBala, tiroa.pos.x, tiroa.pos.y);
-		irudiaMugitu(imageIdArbol, boss1.pos.x, boss1.pos.y);
+		}
+		irudiaMugitu(imageIdBolaArbola, (int)bolaArbola.pos.x, (int)bolaArbola.pos.y);
+		irudiaMugitu(jokalaria.id, (int)jokalaria.pos.x, (int)jokalaria.pos.y - 20);
+		irudiaMugitu(imageIdBala, (int)tiroa.pos.x, (int)tiroa.pos.y);
+		irudiaMugitu(imageIdArbol, (int)boss1.pos.x, (int)boss1.pos.y);
 		
 		irudiakMarraztu();
 		pantailaBerriztu();
-
-		//egoera = JOKOA_egoera(jokalaria, bolaArbola, bizitzKopurua);
+		
 		egoera = JOKO_EGOERA_AZTERTU_BOSS1(bizitzKopurua, bossarenBizitzak);
 	} while (egoera == BOSS1);
 	irudiaKendu(jokalaria.id);

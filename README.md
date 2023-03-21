@@ -41,7 +41,7 @@
     <a href="https://github.com/UN41/FALLEN_GOD"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/UN41/FALLEN_GOD">View Demo</a>
+    <a href="https://drive.google.com/file/d/1RZoEdsV1oOgvHUz2trkTpNHtVW92lrJQ/view?usp=share_link">View Demo</a>
     ·
     <a href="https://github.com/UN41/FALLEN_GOD/issues">Report Bug</a>
     ·

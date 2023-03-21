@@ -33,7 +33,7 @@
     <img src="sdlExamplesVcWS/02simpleGame/img/delantegif.gif" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Falled God</h3>
+  <h3 align="center">Fallen God</h3>
 
   <p align="center">
      University project game made in 2019 by <a href="https://github.com/UN41">Unai Orive Mugika</a>, <a href="https://github.com/Danielluengo15">Daniel Luengo Echeverria</a>, <a href="https://github.com/AitorAstorga">Aitor Astorga Saez de Vicuña</a> and <a href="https://github.com/">Danel Mazkiaran Hernandez</a>

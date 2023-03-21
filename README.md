@@ -121,6 +121,8 @@ yep, that's it :blush:
 
 You must have a Windows operating system to play this game. Unfortunately, we were too young and Linux-less when we did this, and we didn't know any better. 
 
+Additionally, you will need support for C from Visual Studio. [Install C and C++ support in Visual Studio](https://learn.microsoft.com/en-us/cpp/build/vscpp-step-0-installation?view=msvc-170)
+
 ### Installation
 
 To get a local copy up and running follow these simple example steps.

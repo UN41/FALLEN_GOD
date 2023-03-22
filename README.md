@@ -36,7 +36,7 @@
   <h3 align="center">Fallen God</h3>
 
   <p align="center">
-     University project game made in 2019 by <a href="https://github.com/UN41">Unai Orive Mugika</a>, <a href="https://github.com/Danielluengo15">Daniel Luengo Echeverria</a>, <a href="https://github.com/AitorAstorga">Aitor Astorga Saez de Vicuña</a> and <a href="https://github.com/">Danel Mazkiaran Hernandez</a>
+     University project game made in 2019 by <a href="https://github.com/UN41">Unai Orive Mugika</a>, <a href="https://github.com/Danielluengo15">Daniel Luengo Echeverria</a>, <a href="https://github.com/AitorAstorga">Aitor Astorga Saez de Vicuña</a> and <a href="https://github.com/danmazkih">Danel Mazkiaran Hernandez</a>
     <br />
     <a href="https://github.com/UN41/FALLEN_GOD"><strong>Explore the docs »</strong></a>
     <br />

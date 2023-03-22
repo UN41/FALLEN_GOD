@@ -168,12 +168,17 @@ Distributed under the GNU General Public License v3.0. See `LICENSE` for more in
 <!-- CONTACT -->
 ## Contact
 
+Unai Orive Mugika - unaiby18@gmail.com
+* [![LinkedIn][linkedin-shield]][linkedin-url-unai]
 
 Daniel Luengo Echeverria - danielluengoecheverria@gmail.com
 * [![LinkedIn][linkedin-shield]][linkedin-url-daniel]
 
 Aitor Astorga Saez de Vicuña - a.astorga.sdv@gmail.com
 * [![LinkedIn][linkedin-shield]][linkedin-url-aitor]
+
+Danel Mazkiaran Hernandez - danel.mazkiaran@gmail.com
+* [![LinkedIn][linkedin-shield]][linkedin-url-danel]
 
 Project Link: [https://github.com/UN41/FALLEN_GOD](https://github.com/UN41/FALLEN_GOD)
 
@@ -210,3 +215,5 @@ Project Link: [https://github.com/UN41/FALLEN_GOD](https://github.com/UN41/FALLE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url-aitor]: https://linkedin.com/in/aitor-astorga-saez-de-vicuña
 [linkedin-url-daniel]: https://linkedin.com/in/daniel-luengo-echeverria-05b279224
+[linkedin-url-unai]: https://linkedin.com/in/unai-orive-mujika-a638a6225
+[linkedin-url-danel]: https://linkedin.com/in/danel-mazkiaran-hernandez-67a970248
